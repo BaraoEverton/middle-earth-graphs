@@ -1,4 +1,4 @@
-# Executáveis e artefatos de compilação
+# Executables and build artifacts
 grafo
 *.exe
 *.o
@@ -10,7 +10,7 @@ grafo
 *.pdb
 *.ilk
 
-# IDEs e editores
+# IDEs and editors
 .vscode/
 .idea/
 *.dev
@@ -18,10 +18,10 @@ grafo
 *.swp
 *~
 
-# Sistema operacional
+# Operating system
 .DS_Store
 Thumbs.db
 desktop.ini
 
-# Arquivos temporários do Office
+# Office temporary files
 ~$*
