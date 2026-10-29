@@ -1,0 +1,27 @@
+# Executáveis e artefatos de compilação
+grafo
+*.exe
+*.o
+*.obj
+*.out
+*.a
+*.so
+*.dll
+*.pdb
+*.ilk
+
+# IDEs e editores
+.vscode/
+.idea/
+*.dev
+*.layout
+*.swp
+*~
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Arquivos temporários do Office
+~$*

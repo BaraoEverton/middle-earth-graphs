@@ -1,0 +1,56 @@
+﻿origem,destino,dias_caminhada_estimados
+Grey Havens,Lindon,2
+Lindon,Harlindon,3
+Grey Havens,Forlindon,2
+Lindon,Archet,5
+Archet,Bree,2
+Bree,Tharbad,4
+Bree,Fornost,4
+Fornost,Annúminas,3
+Annúminas,Rivendell,7
+Fornost,Rivendell,9
+Tharbad,Rivendell,6
+Tharbad,Lórien,7
+Rivendell,Khazad-dûm,5
+Khazad-dûm,Lórien,3
+Lórien,Mirkwood,5
+Rivendell,Erebor,8
+Rivendell,Dale,9
+Erebor,Dale,2
+Dale,Esgaroth,2
+Esgaroth,Mirkwood,3
+Mirkwood,Erebor,5
+Dale,Iron Hills,4
+Erebor,Iron Hills,3
+Esgaroth,Rhun,8
+Mirkwood,Rohan,9
+Lórien,Rohan,7
+Khazad-dûm,Rohan,8
+Rohan,Edoras,2
+Edoras,Helm's Deep,2
+Rohan,Isengard,3
+Isengard,Helm's Deep,3
+Edoras,Minas Tirith,8
+Helm's Deep,Minas Tirith,9
+Rohan,Gondor Border,5
+Gondor Border,Minas Tirith,3
+Minas Tirith,Osgiliath,1
+Osgiliath,Minas Morgul,2
+Osgiliath,Pelargir,4
+Pelargir,Dol Amroth,4
+Minas Tirith,Dol Amroth,6
+Minas Morgul,Mordor Gate,2
+Mordor Gate,Barad-dûr,3
+Barad-dûr,Mount Doom,2
+Minas Morgul,Mount Doom,4
+Rohan,Mordor Border,9
+Mordor Border,Barad-dûr,4
+Dol Amroth,Umbar,7
+Umbar,Harad,6
+Harad,Far Harad,8
+Rhun,Khand,7
+Khand,Harad,7
+Rhun,Mordor Border,8
+Lórien,Rivendell,7
+Mirkwood,Dale,4
+Gondor Border,Pelargir,5
