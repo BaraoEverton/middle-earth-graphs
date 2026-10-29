@@ -5,6 +5,10 @@
 #include <ctype.h>
 #include <errno.h>
 #include <limits.h>
+#ifdef _WIN32
+#include <windows.h>
+#include <shellapi.h>
+#endif
 
 #define MAX 100
 #define TAM 128
@@ -184,6 +188,26 @@ static void dijkstra(const Grafo *g, int origem, int alvo) {
 }
 
 /* PROGRAMA PRINCIPAL - Selecao da tarefa e dos destinos. */
+#ifdef _WIN32
+/* No Windows, argv usa a pagina de codigo local; o CSV usa UTF-8. */
+static const char *argumento(int argc, char *argv[], int i,
+                             char *buf, int tam) {
+    int n;
+    wchar_t **w = CommandLineToArgvW(GetCommandLineW(), &n);
+    const char *s = argv[i];
+    if (w && n == argc && WideCharToMultiByte(CP_UTF8, 0, w[i], -1,
+                                              buf, tam, NULL, NULL))
+        s = buf;
+    LocalFree(w);
+    return s;
+}
+#else
+static const char *argumento(int argc, char *argv[], int i,
+                             char *buf, int tam) {
+    (void)argc; (void)buf; (void)tam;
+    return argv[i];
+}
+#endif
 int main(int argc, char *argv[]) {
     if (argc != 3 && argc != 5)
         erro("uso: grafo arquivo tarefa [origem destino]");
@@ -197,10 +221,10 @@ int main(int argc, char *argv[]) {
     if (tarefa == 1) nomes(&g);
     else if (tarefa == 2) matriz(&g);
     else {
-        char a[TAM], b[TAM];
-        const char *o = argc == 5 ? argv[3] :
+        char a[TAM], b[TAM], ua[4*TAM], ub[4*TAM];
+        const char *o = argc == 5 ? argumento(argc, argv, 3, ua, 4*TAM) :
                         (tarefa == 3 ? "Bree" : "Rivendell");
-        const char *d = argc == 5 ? argv[4] :
+        const char *d = argc == 5 ? argumento(argc, argv, 4, ub, 4*TAM) :
                         (tarefa == 3 ? "Gondor_Border" : "Mordor_Gate");
         if (strlen(o) >= TAM || strlen(d) >= TAM
             || caracteres(o) > 31 || caracteres(d) > 31)

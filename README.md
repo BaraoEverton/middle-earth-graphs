@@ -135,7 +135,7 @@ A BFS minimiza o número de arestas, não a soma dos pesos. Quando há empate, v
 - Quando origem e destino existem mas não estão conectados, o programa imprime `Nao existe rota.`.
 - As distâncias usam `long long`, o que evita estouro ao somar pesos grandes.
 
-**Limitação conhecida no Windows:** nomes com acento passados na linha de comando (por exemplo `Annúminas`, `Khazad-dûm`) não são encontrados, porque o Windows entrega os argumentos em uma codificação diferente do UTF-8 usado no CSV. As consultas padrão e os nomes sem acento funcionam normalmente. No Linux, macOS e WSL os nomes acentuados funcionam.
+**Nomes com acento no Windows:** o Windows entrega os argumentos da linha de comando em uma codificação diferente do UTF-8 usado no CSV. Por isso, no Windows, o programa relê a origem e o destino em Unicode (`GetCommandLineW`) e os converte para UTF-8. Assim, consultas como `Annúminas` e `Khazad-dûm` funcionam. Nos demais sistemas os argumentos são usados como chegam.
 
 ## Complexidade
 
